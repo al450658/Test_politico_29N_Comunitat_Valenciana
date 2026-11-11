@@ -33,7 +33,7 @@
         <div class="max-w-4xl mx-auto text-center">
             <span class="bg-indigo-600 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Test Electoral 29N 2026</span>
             <h1 class="text-2xl md:text-3xl font-bold mt-2">Test político para el 29N de 2026 (Comunitat Valenciana)</h1>
-            <p class="text-slate-300 text-sm md:text-base mt-1">Esto es un test de 12 preguntas desglosado en múltiples preguntas por temática para entender cada propuesta, sus consecuencias prácticas y tu afinidad real a los partidos políticos que se presentan en el 29N de 2026, en este caso, de los partidos mayoritarios que se pueden votar desde la Comunidad Valenciana. ¡OJO! ¡Acuerdate del voto útil para conseguir escaños!.</p>
+            <p class="text-slate-300 text-sm md:text-base mt-1">Esto es un test de 14 preguntas desglosado en múltiples preguntas por temática para entender cada propuesta, sus consecuencias prácticas y tu afinidad real a los partidos políticos que se presentan en el 29N de 2026, en este caso, de los partidos mayoritarios que se pueden votar desde la Comunidad Valenciana. ¡OJO! ¡Acuerdate del voto útil para conseguir escaños!.</p>
         </div>
     </header>
 
@@ -42,12 +42,9 @@
 
         <!-- Welcome View -->
         <div id="welcome-screen" class="bg-white rounded-2xl shadow-xl p-6 md:p-10 text-center border border-slate-100">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-50 text-indigo-600 rounded-full mb-4 text-2xl font-bold">
-                📊
-            </div>
             <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Test de medidas politicas y sus consecuencias</h2>
             <p class="text-slate-600 mb-6 leading-relaxed">
-                Este cuestionario ampliado desglosa la economía, los impuestos, la vivienda, la seguridad, los servicios sociales y el medio ambiente en preguntas específicas. Cada opción explica claramente su medida y su consecuencia práctica. La finalidad del test es orientar, por ello, al terminar, verás tus porcentajes y un desglose exacto de las medidas de cada partido que has seleccionado (no dice de que partido político eres, si no las medidas votadas a que partido pertenecen). <strong> Todas las respuestas estan sacadas de los programas electorales oficiales de cada partido, si no confias en ello, usa tu sentido crítico e informate con causa. </strong>
+                Este cuestionario ampliado desglosa la economía, los impuestos, la vivienda, la seguridad, los servicios sociales y el medio ambiente en preguntas específicas. Cada opción explica claramente su medida y su consecuencia práctica. La finalidad del test es orientar, por ello, al terminar, verás tus porcentajes y un desglose exacto de las medidas de cada partido que has seleccionado (no dice de que partido político eres, si no las medidas votadas a que partido pertenecen). Además, te da una orientación ideológica a la que perteneces según las respuestas seleccionadas y según el gráfico de Nolan. <strong> Todas las respuestas estan sacadas de los programas electorales oficiales de cada partido, si no confias en ello, usa tu sentido crítico e informate con causa. </strong>
             </p>
             <button onclick="startQuiz()" class="w-full md:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-lg transition duration-200 cursor-pointer">
                 Comenzar Test
@@ -59,18 +56,18 @@
             <!-- Progress Bar -->
             <div class="mb-6">
                 <div class="flex justify-between text-xs font-semibold text-slate-500 mb-2">
-                    <span id="question-indicator">Pregunta 1 de 12</span>
-                    <span id="progress-percent">8%</span>
+                    <span id="question-indicator">Pregunta 1 de 14</span>
+                    <span id="progress-percent">7%</span>
                 </div>
                 <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-300" style="width: 8%;"></div>
+                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-300" style="width: 7%;"></div>
                 </div>
             </div>
 
             <!-- Question Block -->
             <div class="mb-6">
-                <span id="question-category" class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-md">Economía y Fiscalidad (1/3)</span>
-                <h3 id="question-title" class="text-lg md:text-xl font-bold text-slate-900 mt-2">¿Cuál es tu preferencia sobre la tributación de IRPF y salarios mínimos?</h3>
+                <span id="question-category" class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-md">Economía y Fiscalidad</span>
+                <h3 id="question-title" class="text-lg md:text-xl font-bold text-slate-900 mt-2">¿Cuál es tu preferencia sobre la tributación?</h3>
             </div>
 
             <!-- Options List -->
@@ -81,10 +78,10 @@
             <!-- Navigation Buttons -->
             <div class="flex justify-between items-center pt-4 border-t border-slate-100">
                 <button id="prev-btn" onclick="prevQuestion()" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" disabled>
-                    ← Anterior
+                    &larr; Anterior
                 </button>
                 <button id="next-btn" onclick="nextQuestion()" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer" disabled>
-                    Siguiente →
+                    Siguiente &rarr;
                 </button>
             </div>
         </div>
@@ -104,18 +101,28 @@
 
             <!-- Detailed Measures Breakdown Section -->
             <div class="mb-8">
-                <h3 class="text-lg font-bold text-slate-900 mb-4 border-b pb-2 flex items-center gap-2">
-                    <span>📋</span> Resumen de Medidas Seleccionadas por Partido
+                <h3 class="text-lg font-bold text-slate-900 mb-4 border-b pb-2">
+                    Resumen de Medidas Seleccionadas por Partido
                 </h3>
                 <div id="selected-measures-breakdown" class="space-y-4">
                     <!-- Dynamically populated breakdown -->
                 </div>
             </div>
 
-            <!-- Contextual Analysis for Castellon / Almassora -->
+            <!-- Nolan Diagram / Ideological Profile Section -->
+            <div class="mb-8 p-5 rounded-xl border border-indigo-200 bg-indigo-50/40">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">
+                    Tu Perfil Ideológico (Escala de Nolan y Brújula Política)
+                </h3>
+                <div id="nolan-profile-content" class="space-y-2 text-sm text-slate-700">
+                    <!-- Dynamic Nolan Profile -->
+                </div>
+            </div>
+
+            <!-- Contextual Analysis for Castellon -->
             <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 mb-8">
-                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                    <span>📍</span> Análisis del Voto Útil en Almassora y provincia de Castellón (29N)
+                <h4 class="font-bold text-slate-900 mb-2">
+                    Análisis del Voto Útil (29N)
                 </h4>
                 <p id="contextual-summary" class="text-sm text-slate-600 leading-relaxed">
                     <!-- Dynamic recommendation based on highest score -->
@@ -133,40 +140,43 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-4 px-4 text-center text-xs text-slate-500">
-        <p>Herramienta electoral interactiva basada en los programas oficiales de los partidos que se presentan en la Comunitat Valenciana.</p>
+        <p>Herramienta electoral interactiva basada en los programas oficiales de los partidos mayoritarios que se presentan en el 29N y se pueden votar en la Comunitat Valenciana.</p>
     </footer>
 
     <!-- JavaScript Quiz Logic -->
     <script>
-        // Expanded Questions Data (12 Questions covering 6 core blocks)
         const questions = [
             {
                 category: "1. Economía y Fiscalidad (Pregunta 1 de 3)",
                 title: "¿Cómo abordaría la tributación del IRPF y los incentivos a salarios mínimos y jóvenes?",
                 options: [
                     {
-                        text: "Deflactar tramos de IRPF para rentas bajas/medias y aplicar cero IRPF el primer año a jóvenes en su primer empleo.",
-                        consequence: "Consecuencia: Alivia la presión fiscal inmediata a trabajadores novel y rentas modestas, reduciendo ingresos estatales directos.",
-                        party: "pp",
-                        measureText: "Deflactación de IRPF y cero IRPF el primer año para jóvenes en primer empleo."
-                    },
-                    {
                         text: "Vincular el SMI por ley al 60% del salario medio y establecer una fiscalidad más progresiva con gravámenes a grandes fortunas.",
                         consequence: "Consecuencia: Incrementa el poder adquisitivo de salarios bajos mediante obligación legal empresarial y recauda más de rentas altas.",
                         party: "psoe",
-                        measureText: "Incremento del SMI ligado al 60% del salario medio y mayor progresividad fiscal."
+                        measureText: "Incremento del SMI ligado al 60% del salario medio y mayor progresividad fiscal.",
+                        econ: -1, social: 1
                     },
                     {
                         text: "Reestructurar el IRPF drásticamente a dos tramos únicos (15% y 24%) y suprimir totalmente Patrimonio y Sucesiones.",
                         consequence: "Consecuencia: Simplificación impositiva masiva, atracción de capital privado y rebaja de cargas a patrimonios medios y altos.",
                         party: "vox",
-                        measureText: "Reestructuración del IRPF en dos tramos únicos y supresión de Patrimonio y Sucesiones."
+                        measureText: "Reestructuración del IRPF en dos tramos únicos y supresión de Patrimonio y Sucesiones.",
+                        econ: 2, social: -2
                     },
                     {
                         text: "Establecer una Renta Básica Incondicional progresiva, blindar el SMI por encima de la inflación y subir impuestos a beneficios extraordinarios.",
                         consequence: "Consecuencia: Reducción drástica de la desigualdad mediante redistribución estatal intensiva y mayor intervención fiscal.",
                         party: "compromis",
-                        measureText: "Renta Básica Incondicional y blindaje del SMI por encima del IPC."
+                        measureText: "Renta Básica Incondicional y blindaje del SMI por encima del IPC.",
+                        econ: -2, social: 2
+                    },
+                    {
+                        text: "Deflactar tramos de IRPF para rentas bajas/medias y aplicar cero IRPF el primer año a jóvenes en su primer empleo.",
+                        consequence: "Consecuencia: Alivia la presión fiscal inmediata a trabajadores novel y rentas modestas, reduciendo ingresos estatales directos.",
+                        party: "pp",
+                        measureText: "Deflactación de IRPF y cero IRPF el primer año para jóvenes en primer empleo.",
+                        econ: 1, social: -1
                     }
                 ]
             },
@@ -175,28 +185,32 @@
                 title: "¿Cuál es tu postura ante la jornada laboral y la regulación del tiempo de trabajo?",
                 options: [
                     {
+                        text: "Reducir por ley la jornada laboral a 35 o 32 horas semanales obligatorias sin bajada salarial en ningún sector.",
+                        consequence: "Consecuencia: Gran avance en conciliación y calidad de vida, exigiendo adaptación estricta a empresas medianas y grandes.",
+                        party: "compromis",
+                        measureText: "Reducción por ley de la jornada a 35-32 horas semanales sin merma salarial.",
+                        econ: -2, social: 2
+                    },
+                    {
                         text: "Flexibilidad y apoyo a la negociación colectiva interna en cada empresa, sin imposiciones estatales rígidas de horas.",
                         consequence: "Consecuencia: Permite adaptarse a sectores productivos específicos (como la cerámica o agricultura) sin castigar la competitividad.",
                         party: "pp",
-                        measureText: "Flexibilidad laboral pactada sin imposición legal de reducción de jornada."
+                        measureText: "Flexibilidad laboral pactada sin imposición legal de reducción de jornada.",
+                        econ: 1, social: -1
                     },
                     {
                         text: "Reducir progresivamente la jornada laboral legal hasta las 36 horas semanales manteniendo el salario íntegro.",
                         consequence: "Consecuencia: Fomenta la conciliación y el reparto de empleo, con supervisión pública sobre la productividad.",
                         party: "psoe",
-                        measureText: "Reducción gradual de la jornada laboral hasta 36 horas semanales."
+                        measureText: "Reducción gradual de la jornada laboral hasta 36 horas semanales.",
+                        econ: -1, social: 1
                     },
                     {
                         text: "Mantener los marcos actuales de flexibilidad empresarial, reduciendo trabas burocráticas y costes laborales a empleadores.",
                         consequence: "Consecuencia: Estimula la contratación privada barata y reduce costes fijos a autónomos y PYMEs.",
                         party: "vox",
-                        measureText: "Reducción de trabas burocráticas y costes laborales a empleadores."
-                    },
-                    {
-                        text: "Reducir por ley la jornada laboral a 35 o 32 horas semanales obligatorias sin bajada salarial en ningún sector.",
-                        consequence: "Consecuencia: Gran avance en conciliación y calidad de vida, exigiendo adaptación estricta a empresas medianas y grandes.",
-                        party: "compromis",
-                        measureText: "Reducción por ley de la jornada a 35-32 horas semanales sin merma salarial."
+                        measureText: "Reducción de trabas burocráticas y costes laborales a empleadores.",
+                        econ: 2, social: -2
                     }
                 ]
             },
@@ -205,88 +219,100 @@
                 title: "¿Qué medida fiscal aplicarías al Impuesto de Sociedades y a las PYMEs o autónomos?",
                 options: [
                     {
+                        text: "Reducir el Impuesto sobre Sociedades a un tipo fijo del 15% y eliminar tasas administrativas y duplicidades autonómicas.",
+                        consequence: "Consecuencia: Atrae corporaciones internacionales y desahoga fiscalmente a cualquier tipo de sociedad mercantil.",
+                        party: "vox",
+                        measureText: "Tipo fijo del 15% en Impuesto de Sociedades y supresión de tasas autonómicas.",
+                        econ: 2, social: -1
+                    },
+                    {
+                        text: "Creación de una banca pública y una empresa energética estatal para garantizar financiación blanda a autónomos y abaratar costes básicos a PYMEs (tanto familias como pequeños negocios).",
+                        consequence: "Consecuencia: Menor dependencia de oligopolios privados en suministros críticos, financiada con presupuestos públicos e intervención pública directa para reducir los gastos fijos de luz y crédito a pequeños negocios.",
+                        party: "compromis",
+                        measureText: "Creación de banca pública y empresa energética estatal.",
+                        econ: -2, social: 1
+                    },
+                    {
                         text: "Tarifa plana ampliada de autónomos, simplificación administrativa drástica y deducciones a la inversión en PYMEs.",
                         consequence: "Consecuencia: Facilita la creación y supervivencia de pequeños negocios reduciendo costes fijos y papeleo.",
                         party: "pp",
-                        measureText: "Tarifa plana de autónomos y simplificación administrativa para PYMEs."
+                        measureText: "Tarifa plana de autónomos y simplificación administrativa para PYMEs.",
+                        econ: 1, social: -1
                     },
                     {
                         text: "Incentivos fiscales condicionados a la digitalización, I+D+i industrial y mantenimiento de empleo estable en el tejido productivo.",
                         consequence: "Consecuencia: Orienta los fondos fiscales hacia la modernización tecnológica y la estabilidad laboral.",
                         party: "psoe",
-                        measureText: "Incentivos fiscales a la digitalización, I+D+i y empleo estable."
-                    },
-                    {
-                        text: "Reducir el Impuesto sobre Sociedades a un tipo fijo del 15% y eliminar tasas administrativas y duplicidades autonómicas.",
-                        consequence: "Consecuencia: Atrae corporaciones internacionales y desahoga fiscalmente a cualquier tipo de sociedad mercantil.",
-                        party: "vox",
-                        measureText: "Tipo fijo del 15% en Impuesto de Sociedades y supresión de tasas autonómicas."
-                    },
-                    {
-                        text: "Creación de una banca pública y una empresa energética estatal para abaratar costes básicos a familias y pequeños negocios.",
-                        consequence: "Consecuencia: Menor dependencia de oligopolios privados en suministros críticos, financiada con presupuestos públicos.",
-                        party: "compromis",
-                        measureText: "Creación de banca pública y empresa energética estatal."
+                        measureText: "Incentivos fiscales a la digitalización, I+D+i y empleo estable.",
+                        econ: -1, social: 1
                     }
                 ]
             },
             {
-                category: "2. Servicios Sociales y Sanidad (Pregunta 4 de 3)",
+                category: "2. Servicios Sociales y Sanidad (Pregunta 4 de 2)",
                 title: "¿Cómo debe resolverse el problema de las listas de espera y la gestión de la sanidad?",
                 options: [
-                    {
-                        text: "Plan de choque con derivaciones concertadas y dotación de incentivos al personal sanitario para eliminar listas de espera.",
-                        consequence: "Consecuencia: Descongestión rápida de hospitales públicos utilizando recursos complementarios privados o concertados.",
-                        party: "pp",
-                        measureText: "Plan de choque con derivaciones y refuerzo de incentivos sanitarios."
-                    },
                     {
                         text: "Blindaje legal absoluto contra la privatización de la sanidad pública y aumento estructural de plantillas en atención primaria.",
                         consequence: "Consecuencia: Refuerzo del carácter 100% público del sistema, aunque requiere plazos largos de ejecución y financiación.",
                         party: "psoe",
-                        measureText: "Blindaje legal contra la privatización y aumento de plantillas públicas."
-                    },
-                    {
-                        text: "Eliminar subvenciones a patronales, sindicatos u ONGs ideológicas y redirigir todo ese dinero directamente a sanidad y dependencia.",
-                        consequence: "Consecuencia: Inyección presupuestaria directa a servicios asistenciales suprimiendo gastos administrativos externos.",
-                        party: "vox",
-                        measureText: "Supresión de subvenciones a agentes sociales para reasignación a sanidad."
+                        measureText: "Blindaje legal contra la privatización y aumento de plantillas públicas.",
+                        econ: -1, social: 1
                     },
                     {
                         text: "Inclusión universal de salud bucodental, óptica y salud mental en la cartera común del Sistema Nacional de Salud.",
                         consequence: "Consecuencia: Cobertura sanitaria integral muy amplia que cubre necesidades actualmente desatendidas en la privada.",
                         party: "compromis",
-                        measureText: "Inclusión de salud bucodental, óptica y mental en la sanidad pública."
+                        measureText: "Inclusión de salud bucodental, óptica y mental en la sanidad pública.",
+                        econ: -2, social: 2
+                    },
+                    {
+                        text: "Eliminar subvenciones a patronales, sindicatos u ONGs ideológicas y redirigir todo ese dinero directamente a sanidad y dependencia.",
+                        consequence: "Consecuencia: Inyección presupuestaria directa a servicios asistenciales suprimiendo gastos administrativos externos.",
+                        party: "vox",
+                        measureText: "Supresión de subvenciones a agentes sociales para reasignación a sanidad.",
+                        econ: 1, social: -2
+                    },
+                    {
+                        text: "Plan de choque con derivaciones concertadas y dotación de incentivos al personal sanitario para eliminar listas de espera.",
+                        consequence: "Consecuencia: Descongestión rápida de hospitales públicos utilizando recursos complementarios privados o concertados.",
+                        party: "pp",
+                        measureText: "Plan de choque con derivaciones y refuerzo de incentivos sanitarios.",
+                        econ: 1, social: -1
                     }
                 ]
             },
             {
-                category: "2. Servicios Sociales y Sanidad (Pregunta 5 de 3)",
+                category: "2. Servicios Sociales y Sanidad (Pregunta 5 de 2)",
                 title: "¿Qué modelo educativo prefieres para la enseñanza infantil, escolar y las familias?",
                 options: [
                     {
-                        text: "Gratuidad de la educación infantil de 0 a 3 años y libertad de elección de centro (público o concertado) con cheques educativos.",
-                        consequence: "Consecuencia: Las familias eligen libremente el modelo pedagógico y se facilita la conciliación temprana.",
-                        party: "pp",
-                        measureText: "Gratuidad de 0 a 3 años y libertad de elección de centro educativo."
+                        text: "Implantación del cheque escolar universal para cualquier centro y deducciones fiscales masivas por hijo para incentivar la natalidad.",
+                        consequence: "Consecuencia: Competencia directa entre centros educativos financiados por bonos y desgravaciones directas a padres.",
+                        party: "vox",
+                        measureText: "Cheque escolar universal y deducciones fiscales masivas por natalidad.",
+                        econ: 2, social: -2
                     },
                     {
                         text: "Reducción de ratios de alumnos por aula en la enseñanza pública y consolidación de becas de comedor y material escolar.",
                         consequence: "Consecuencia: Mayor atención personalizada en el aula y apoyo directo a familias vulnerables.",
                         party: "psoe",
-                        measureText: "Reducción de ratios en aulas y refuerzo de becas de comedor."
+                        measureText: "Reducción de ratios en aulas y refuerzo de becas de comedor.",
+                        econ: -1, social: 1
                     },
                     {
-                        text: "Implantación del cheque escolar universal para cualquier centro y deducciones fiscales masivas por hijo para incentivar la natalidad.",
-                        consequence: "Consecuencia: Competencia directa entre centros educativos financiados por bonos y desgravaciones directas a padres.",
-                        party: "vox",
-                        measureText: "Cheque escolar universal y deducciones fiscales masivas por natalidad."
-                    },
-                    {
-                        text: "Educación pública 100% gratuita y universal desde los 0 años hasta la universidad, eliminando conciertos progresivamente.",
+                        text: "Educación pública 100% gratuita y universal desde los 0 años hasta la universidad, eliminando progresivamente los conciertos (escuelas concertadas y privadas que reciben fondos públicos).",
                         consequence: "Consecuencia: Fomento exclusivo de la red pública y la igualdad de oportunidades sin segregación por centros privados.",
                         party: "compromis",
-                        measureText: "Educación pública 100% gratuita y universal de 0 años a universidad."
+                        measureText: "Educación pública 100% gratuita y universal de 0 años a universidad.",
+                        econ: -2, social: 2
+                    },
+                    {
+                        text: "Gratuidad de la educación infantil de 0 a 3 años y libertad de elección de centro (público o concertado) con cheques educativos.",
+                        consequence: "Consecuencia: Las familias eligen libremente el modelo pedagógico y se facilita la conciliación temprana.",
+                        party: "pp",
+                        measureText: "Gratuidad de 0 a 3 años y libertad de elección de centro educativo.",
+                        econ: 1, social: -1
                     }
                 ]
             },
@@ -295,28 +321,32 @@
                 title: "¿Cómo enfocarías la crisis de acceso a la vivienda y el control de alquileres?",
                 options: [
                     {
+                        text: "Intervención de precios de alquiler, prohibición de compra a fondos especulativos y uso obligatorio de pisos en el parque público del alquiler social de la SAREB (sociedad pública ue cuenta con un gran volumen de viviendas, inmuebles y suelo procedentes del rescate bancario).",
+                        consequence: "Consecuencia: Control público fuerte del mercado inmobiliario y movilización de vivienda vacía contra la especulación.",
+                        party: "compromis",
+                        measureText: "Intervención de alquileres y movilización de pisos de la SAREB.",
+                        econ: -2, social: 2
+                    },
+                    {
                         text: "Avales públicos del 20% para la compra de primera vivienda en jóvenes y liberación masiva de suelo urbanizable.",
                         consequence: "Consecuencia: Facilita el acceso a la propiedad privada y aumenta la oferta edificable para frenar precios.",
                         party: "pp",
-                        measureText: "Avales públicos del 20% para jóvenes y liberalización de suelo."
+                        measureText: "Avales públicos del 20% para jóvenes y liberalización de suelo.",
+                        econ: 1, social: -1
                     },
                     {
                         text: "Creación de un parque público de alquiler social (8-10%) y aplicación de topes de precios en zonas tensionadas.",
                         consequence: "Consecuencia: Protección temporal a inquilinos en áreas saturadas y aumento del parque público protegido.",
                         party: "psoe",
-                        measureText: "Parque público de alquiler social y topes de precios en zonas tensionadas."
+                        measureText: "Parque público de alquiler social y topes de precios en zonas tensionadas.",
+                        econ: -1, social: 1
                     },
                     {
                         text: "Derogación total de los topes de precios de la Ley de Vivienda, desgravaciones por compra y tolerancia cero contra la okupación.",
                         consequence: "Consecuencia: Estímulo a la inversión privada en ladrillo y seguridad jurídica estricta al propietario.",
                         party: "vox",
-                        measureText: "Derogación de topes de alquiler y desgravaciones por compra."
-                    },
-                    {
-                        text: "Intervención de precios de alquiler, prohibición de compra a fondos especulativos y uso obligatorio de pisos de la SAREB.",
-                        consequence: "Consecuencia: Control público fuerte del mercado inmobiliario y movilización de vivienda vacía contra la especulación.",
-                        party: "compromis",
-                        measureText: "Intervención de alquileres y movilización de pisos de la SAREB."
+                        measureText: "Derogación de topes de alquiler y desgravaciones por compra.",
+                        econ: 2, social: -2
                     }
                 ]
             },
@@ -325,28 +355,32 @@
                 title: "Ante el fenómeno de la okupación ilegal de viviendas, ¿qué medida priorizas?",
                 options: [
                     {
-                        text: "Desalojo policial exprés de viviendas okupadas en un plazo máximo de 48 horas y endurecimiento penal.",
-                        consequence: "Consecuencia: Protección inmediata de la propiedad privada y recuperación rápida del inmueble.",
-                        party: "pp",
-                        measureText: "Desalojo exprés en 48 horas y endurecimiento contra la okupación."
-                    },
-                    {
-                        text: "Agilización de trámites judiciales por vía rápida manteniendo garantías procesales y apoyo a municipios afectados.",
-                        consequence: "Consecuencia: Resolución judicial acelerada evitando saltarse las garantías constitucionales del proceso.",
-                        party: "psoe",
-                        measureText: "Agilización judicial por vía rápida para desalojos ilegales."
-                    },
-                    {
                         text: "Penas de cárcel severas e inmediatas para okupas y prohibición de empadronamiento en inmuebles okupados.",
                         consequence: "Consecuencia: Disuasión penal drástica mediante privación de libertad y bloqueo administrativo municipal.",
                         party: "vox",
-                        measureText: "Penas de cárcel severas y prohibición de empadronamiento a okupas."
+                        measureText: "Penas de cárcel severas y prohibición de empadronamiento a okupas.",
+                        econ: 1, social: -2
                     },
                     {
                         text: "Atender el problema garantizando alternativa habitacional pública antes de cualquier desahucio de familias vulnerables.",
                         consequence: "Consecuencia: Protección social del vulnerable mientras se investiga el trasfondo habitacional del conflicto.",
                         party: "compromis",
-                        measureText: "Garantía de alternativa habitacional antes de desahucios vulnerables."
+                        measureText: "Garantía de alternativa habitacional antes de desahucios vulnerables.",
+                        econ: -2, social: 2
+                    },
+                    {
+                        text: "Desalojo policial exprés de viviendas okupadas en un plazo máximo de 48 horas y endurecimiento penal.",
+                        consequence: "Consecuencia: Busca modificar la ley para que la policía pueda desalojar por la vía rápida administrativa, permitiendo actuar sin tener que esperar a que un juez dicte una orden judicial de desalojo en cualquier sitio cuando no es morada (casa habitual o segunda residencia la policía ya actúa de inmediato).",
+                        party: "pp",
+                        measureText: "Desalojo exprés en 48 horas y endurecimiento contra la okupación.",
+                        econ: 1, social: -1
+                    },
+                    {
+                        text: "Agilización de trámites judiciales por vía rápida manteniendo garantías procesales y apoyo a municipios afectados.",
+                        consequence: "Consecuencia: Resolución judicial acelerada evitando saltarse las garantías constitucionales del proceso.",
+                        party: "psoe",
+                        measureText: "Agilización judicial por vía rápida para desalojos ilegales.",
+                        econ: -1, social: 1
                     }
                 ]
             },
@@ -355,28 +389,32 @@
                 title: "¿Cómo debe abordarse la seguridad ciudadana y la reincidencia delictiva?",
                 options: [
                     {
-                        text: "Endurecimiento de las penas en el Código Penal contra la multirreincidencia y refuerzo de plantillas policiales.",
-                        consequence: "Consecuencia: Mayor presencia policial en calles y castigos más severos a delincuentes habituales.",
-                        party: "pp",
-                        measureText: "Endurecimiento de penas contra la multirreincidencia y más policías."
-                    },
-                    {
-                        text: "Modernización y digitalización del sistema judicial con unidades especializadas en ciberdelitos y prevención.",
-                        consequence: "Consecuencia: Justicia más ágil tecnológicamente y persecución eficaz de nuevas formas de delincuencia.",
+                        text: "Modernización y digitalización del sistema judicial (expedientes digitales, automatización) y creación de unidades especializadas en ciberdelitos y prevención (juzgados y policías específicamente formados para perseguir delitos informáticos, estafas online, ciberdelincuencia y fraudes complejos).",
+                        consequence: "Consecuencia: Justicia más ágil tecnológicamente y persecución eficaz de nuevas formas de delincuencia para evitar la demora en los tramites de denuncias por ciberdelitos o el colapsamiento del sistema por falta de medios digitales.",
                         party: "psoe",
-                        measureText: "Modernización judicial y unidades contra ciberdelitos."
+                        measureText: "Modernización judicial y unidades contra ciberdelitos.",
+                        econ: -1, social: 1
                     },
                     {
                         text: "Expulsión inmediata de inmigrantes irregulares y de legales que reincidan en delitos, junto a cadena perpetua revisable.",
                         consequence: "Consecuencia: Mano dura penal y control migratorio drástico con expulsiones expeditivas.",
                         party: "vox",
-                        measureText: "Expulsión de reincidentes y endurecimiento penal máximo."
+                        measureText: "Expulsión de reincidentes y endurecimiento penal máximo.",
+                        econ: 1, social: -2
                     },
                     {
-                        text: "Modelo basado en policía de proximidad, mediación comunitaria y despenalización de protestas sociales pacíficas.",
-                        consequence: "Consecuencia: Prevención social del delito y protección de los derechos de manifestación y expresión.",
+                        text: "Modelo basado en policía de proximidad (recuperar la figura de policia de barrio), mediación comunitaria (sistema alternativo para resolver conflictos cotidianos mediante mediadores profesionales antes de que colapsen los juzgados) y despenalización de protestas sociales pacíficas (revisar o suavizar leyes como la Ley Mordaza) protegiendo el derecho a la libertad de expresión.",
+                        consequence: "Consecuencia: Prevención social del delito antes de que ocurra, resolución de conflictos vecinales o sociales sin recurrir inmediatamente a la via penal o al castigo policial duro y protección de los derechos de manifestación y expresión.",
                         party: "compromis",
-                        measureText: "Modelo de policía de proximidad y protección de la protesta social."
+                        measureText: "Modelo de policía de proximidad y protección de la protesta social.",
+                        econ: -2, social: 2
+                    },
+                    {
+                        text: "Endurecimiento de las penas en el Código Penal contra la multirreincidencia y refuerzo de plantillas policiales.",
+                        consequence: "Consecuencia: Mayor presencia policial en calles y castigos más severos a delincuentes habituales.",
+                        party: "pp",
+                        measureText: "Endurecimiento de penas contra la multirreincidencia y más policías.",
+                        econ: 1, social: -1
                     }
                 ]
             },
@@ -385,58 +423,66 @@
                 title: "¿Cuál es tu postura ante la inmigración y los flujos fronterizos?",
                 options: [
                     {
+                        text: "Planes de regularización extraordinaria de personas integradas y garantía de plenos derechos sociales y laborales sin discriminación.",
+                        consequence: "Consecuencia: Integración jurídica plena de la población extranjera residente para evitar la economía sumergida.",
+                        party: "compromis",
+                        measureText: "Regularización extraordinaria y plenos derechos sociales.",
+                        econ: -2, social: 2
+                    },
+                    {
                         text: "Control estricto de fronteras, vías de inmigración legal y ordenada vinculada al empleo y exigencia de integración cultural.",
                         consequence: "Consecuencia: Regulación migratoria sujeta estrictamente a las necesidades del mercado de trabajo nacional.",
                         party: "pp",
-                        measureText: "Inmigración legal y ordenada vinculada al mercado laboral."
+                        measureText: "Inmigración legal y ordenada vinculada al mercado laboral.",
+                        econ: 1, social: -1
                     },
                     {
-                        text: "Políticas de integración social activa, cooperación al desarrollo en origen y refuerzo de los mecanismos de asilo humanitario.",
-                        consequence: "Consecuencia: Enfoque humanitario e integrador apoyado en redes de acogida estatales y europeas.",
+                        text: "Políticas de integración social activa, cooperación y ayuda exterior al desarrollo en origen (invertir en los países de origen) y refuerzo de los mecanismos de asilo humanitario.",
+                        consequence: "Consecuencia: Enfoque humanitario e integrador apoyado en redes de acogida estatales y europeas basado en un modelo de diplomacia internacional y en redes de acogida estatales y europeas coordinadas para frenar las causas que empujan a la gente a emigrar y reforzar los cauces legales de asilo y refugio humanitario.",
                         party: "psoe",
-                        measureText: "Políticas de integración activa y cooperación al desarrollo."
+                        measureText: "Políticas de integración activa y cooperación al desarrollo.",
+                        econ: -1, social: 1
                     },
                     {
                         text: "Cierre de fronteras a la inmigración ilegal, expulsión masiva de irregulares, cierre de menas y supresión de ayudas sociales no esenciales.",
                         consequence: "Consecuencia: Restricción absoluta de flujos no controlados y ahorro de gasto social en no nacionales.",
                         party: "vox",
-                        measureText: "Cierre fronterizo a la inmigración ilegal y expulsiones masivas."
-                    },
-                    {
-                        text: "Planes de regularización extraordinaria de personas integradas y garantía de plenos derechos sociales y laborales sin discriminación.",
-                        consequence: "Consecuencia: Integración jurídica plena de la población extranjera residente para evitar la economía sumergida.",
-                        party: "compromis",
-                        measureText: "Regularización extraordinaria y plenos derechos sociales."
+                        measureText: "Cierre fronterizo a la inmigración ilegal y expulsiones masivas.",
+                        econ: 1, social: -2
                     }
                 ]
             },
             {
-                category: "5. Modelo de Estado y Autonomías (Pregunta 10 de 2)",
+                category: "5. Modelo de Estado y Autonomías (Pregunta 10 de 1)",
                 title: "¿Cómo planteas el modelo territorial y la financiación autonómica (ej. Comunitat Valenciana)?",
                 options: [
                     {
-                        text: "Nuevo sistema de financiación autonómica negociado de forma multilateral y transparente, garantizando igualdad entre comunidades con unas reglas idénticas para todos los territorios (no hay una comunidad con mas privilegios que otra).",
-                        consequence: "Consecuencia: Búsqueda de un pacto global de financiación regional sin privilegios bilaterales particulares.",
-                        party: "pp",
-                        measureText: "Nuevo modelo de financiación autonómica multilateral y equitativo."
-                    },
-                    {
-                        text: "Avanzar en el Estado federal cooperativo y condonación parcial de deuda autonómica para aliviar las cuentas regionales.",
-                        consequence: "Consecuencia: Alivio financiero temporal de las comunidades mediante asunción estatal de parte de la deuda.",
+                        text: "Avanzar en el Estado federal cooperativo (un modelo donde el poder central y las comunidades colaboran de forma leal y equitativa compartiendo competencias y recursos) y cancelar parte de la deuda acumulada de las comunidades para aliviar sus cuentas.",
+                        consequence: "Consecuencia: Alivio financiero regional al asumir el Estado una parte de la deuda acumulada.",
                         party: "psoe",
-                        measureText: "Modelo federal cooperativo y condonación parcial de deuda autonómica."
+                        measureText: "Modelo federal cooperativo y condonación parcial de deuda autonómica.",
+                        econ: -1, social: 1
                     },
                     {
-                        text: "Recentralización progresiva de competencias (Sanidad, Educación, Justicia) y supresión de parlamentos autonómicos.",
-                        consequence: "Consecuencia: Unicidad de leyes y gestión única estatal, eliminando duplicidades administrativas regionales.",
-                        party: "vox",
-                        measureText: "Recentralización de competencias y supresión de parlamentos regionales."
-                    },
-                    {
-                        text: "Reforma urgente del sistema de financiación para compensar la infrafinanciación valenciana para corregir el histórico déficit de ingresos que sufre la Comunitat Valenciana frente a otras regiones y blindaje del autogobierno regional y fomentar activamente la enseñanza y el uso institucional de la lengua coofical.",
+                        text: "Reforma urgente del sistema de financiación para compensar la infrafinanciación valenciana corrigiendo el histórico déficit de ingresos, junto al blindaje del autogobierno y el fomento institucional de la lengua cooficial.",
                         consequence: "Consecuencia: Corrección inmediata del déficit histórico de ingresos de la Comunitat Valenciana.",
                         party: "compromis",
-                        measureText: "Reforma urgente de financiación para la Comunitat Valenciana."
+                        measureText: "Reforma urgente de financiación para la Comunitat Valenciana y protección lingüística.",
+                        econ: -2, social: 2
+                    },
+                    {
+                        text: "Recentralización (suprimir parlamentos y devolver competencias al Estado) progresiva de competencias (Sanidad, Educación, Justicia) y supresión de parlamentos autonómicos.",
+                        consequence: "Consecuencia: Unicidad de leyes y gestión única estatal, eliminando duplicidades administrativas regionales garantizando que todos los españoles tengan los mismos servicios y leyes en todas las regiones (no hay diferencias territoriales).",
+                        party: "vox",
+                        measureText: "Recentralización de competencias y supresión de parlamentos regionales.",
+                        econ: 1, social: -2
+                    },
+                    {
+                        text: "Nuevo sistema de financiación autonómica negociado de forma multilateral y transparente, garantizando igualdad entre comunidades con unas reglas idénticas para todos los territorios (sin privilegios bilaterales).",
+                        consequence: "Consecuencia: Búsqueda de un pacto global de financiación regional sin tratos preferenciales particulares.",
+                        party: "pp",
+                        measureText: "Nuevo modelo de financiación autonómica multilateral y equitativo.",
+                        econ: 1, social: -1
                     }
                 ]
             },
@@ -445,70 +491,146 @@
                 title: "¿Qué política hidráulica y de trasvases defiendes para zonas de secano y agricultura?",
                 options: [
                     {
-                        text: "Plan Hidrológico Nacional con interconexión de cuencas y mantenimiento de trasvases (como el Tajo-Segura) con caudales técnicos.",
-                        consequence: "Consecuencia: Garantiza el suministro hídrico al campo levantino y al sureste peninsular mediante infraestructuras.",
-                        party: "pp",
-                        measureText: "Plan Hidrológico Nacional con interconexión de cuencas y trasvases."
+                        text: "Plan Nacional del Agua con grandes obras hidráulicas y trasvases masivos, derogando restricciones climáticas al regadío.",
+                        consequence: "Consecuencia: Suministro hídrico prioritario y masivo para la agricultura tradicional eliminando trabas ecológicas.",
+                        party: "vox",
+                        measureText: "Plan Nacional del Agua con grandes trasvases y supresión de restricciones.",
+                        econ: 2, social: -2
                     },
                     {
                         text: "Apoyo a la desalación eficiente, modernización de regadíos y protección de los caudales ecológicos de los ríos por criterios científicos.",
                         consequence: "Consecuencia: Sostenibilidad hídrica basada en tecnología de desalación y ahorro en origen sin depender de trasvases.",
                         party: "psoe",
-                        measureText: "Desalación eficiente, modernización de regadíos y caudales ecológicos."
+                        measureText: "Desalación eficiente, modernización de regadíos y caudales ecológicos.",
+                        econ: -1, social: 1
                     },
                     {
-                        text: "Plan Nacional del Agua con grandes obras hidráulicas y trasvases masivos, derogando restricciones climáticas al regadío.",
-                        consequence: "Consecuencia: Suministro ilimitado priorizando el sector agrario tradicional frente a criterios ecologistas estrictos.",
-                        party: "vox",
-                        measureText: "Plan Nacional del Agua y trasvases masivos para el sector agrario."
-                    },
-                    {
-                        text: "Oposición a nuevos trasvases destructivos, priorizando la reutilización de aguas depuradas y la protección de los acuíferos locales.",
-                        consequence: "Consecuencia: Conservación estricta del medio fluvial natural y fomento de recursos hídricos de proximidad.",
+                        text: "Oposición a nuevos trasvases insostenibles, apuesta por la reutilización agraria eficiente y protección de los parques naturales.",
+                        consequence: "Consecuencia: Gestión de recursos hídricos locales y de proximidad priorizando la preservación medioambiental.",
                         party: "compromis",
-                        measureText: "Oposición a trasvases destructivos y apuesta por agua de proximidad."
+                        measureText: "Apuesta por reutilización local y oposición a trasvases insostenibles.",
+                        econ: -2, social: 2
+                    },
+                    {
+                        text: "Plan Hidrológico Nacional con interconexión de cuencas y mantenimiento de trasvases (como el Tajo-Segura) con caudales técnicos.",
+                        consequence: "Consecuencia: Garantiza el suministro hídrico al campo levantino y al sureste peninsular mediante infraestructuras.",
+                        party: "pp",
+                        measureText: "Plan Hidrológico Nacional con interconexión de cuencas y trasvases.",
+                        econ: 1, social: -1
                     }
                 ]
             },
             {
                 category: "6. Medio Ambiente, Agua y Energía (Pregunta 12 de 2)",
-                title: "¿Cuál es tu estrategia energética y medioambiental para la industria y el campo?",
+                title: "¿Cuál es tu postura ante la transición energética y el sector industrial (ej. sector cerámico)?",
                 options: [
                     {
-                        text: "Prórroga de la vida útil de las centrales nucleares y transición energética pragmática que no asfixie a la industria (ej. sector azulejero).",
-                        consequence: "Consecuencia: Energía barata y estable garantizada para fábricas y hogares mientras se despliegan renovables.",
-                        party: "pp",
-                        measureText: "Prórroga de nucleares y transición energética pragmática para la industria."
-                    },
-                    {
-                        text: "Aceleración de energías renovables, ayudas a la descarbonización industrial intensiva y cumplimiento de acuerdos climáticos.",
-                        consequence: "Consecuencia: Modernización verde de la economía con subvenciones europeas a la transformación ecológica.",
-                        party: "psoe",
-                        measureText: "Apuesta por renovables y ayudas a la descarbonización industrial."
-                    },
-                    {
-                        text: "Derogación inmediata de la Ley de Cambio Climático, del Pacto Verde Europeo y apuesta por la soberanía energética fósil y nuclear.",
-                        consequence: "Consecuencia: Fin de las restricciones ecológicas comunitarias para abaratar costes energéticos inmediatos.",
-                        party: "vox",
-                        measureText: "Derogación de leyes climáticas y Pacto Verde Europeo."
-                    },
-                    {
-                        text: "Prohibición de macrogranjas y macroplantas fotovoltaicas en suelo fértil, e impulso a comunidades energéticas locales.",
-                        consequence: "Consecuencia: Protección del suelo agrícola tradicional frente a la especulación energética y fomento del autoconsumo.",
+                        text: "Aceleración de comunidades energéticas locales, prohibición de macroplantas fotovoltaicas en suelo fértil y creación de energética pública.",
+                        consequence: "Consecuencia: Democratización del autoconsumo y control público estricto del mercado energético.",
                         party: "compromis",
-                        measureText: "Protección de suelo fértil y fomento de comunidades energéticas."
+                        measureText: "Comunidades energéticas locales y creación de energética pública.",
+                        econ: -2, social: 2
+                    },
+                    {
+                        text: "Prórroga de las centrales nucleares y revisión del ritmo de transición ecológica para proteger la competitividad industrial (azulejo) y el campo.",
+                        consequence: "Consecuencia: Evita costes eléctricos asfixiantes a la industria intensiva y asegura energía de base estable.",
+                        party: "pp",
+                        measureText: "Prórroga nuclear y protección de costes energéticos industriales.",
+                        econ: 1, social: -1
+                    },
+                    {
+                        text: "Mantener el calendario de transición hacia energías 100% renovables con ayudas específicas para la descarbonización industrial.",
+                        consequence: "Consecuencia: Cumplimiento de objetivos climáticos europeos respaldando financieramente a la industria en su proceso.",
+                        party: "psoe",
+                        measureText: "Transición a renovables y ayudas a la descarbonización industrial.",
+                        econ: -1, social: 1
+                    },
+                    {
+                        text: "Derogación inmediata de la Ley de Cambio Climático, fin de impuestos verdes y apuesta por energía nuclear propia y carbón local.",
+                        consequence: "Consecuencia: Abaratamiento radical de la energía eliminando cargas ideológicas climáticas a empresas y hogares.",
+                        party: "vox",
+                        measureText: "Derogación de leyes climáticas y apuesta por soberanía energética nuclear.",
+                        econ: 2, social: -2
+                    }
+                ]
+            },
+            {
+                category: "7. Regeneración Democrática y Justicia (Pregunta 13 de 1)",
+                title: "¿Cómo enfocarías la reforma de los órganos judiciales (CGPJ) y las medidas contra la corrupción?",
+                options: [
+                    {
+                        text: "Mantener el sistema actual de control de los jueces mejorando la transparencia y la prevención de la corrupción en las empresas y la administración.",
+                        consequence: "Consecuencia: Se confía en los controles institucionales que ya existen, añadiendo más vigilancia contra los chanchullos empresariales y públicos.",
+                        party: "psoe",
+                        measureText: "Transparencia y control institucional existente.",
+                        econ: -1, social: 0
+                    },
+                    {
+                        text: "Cerrar organismos públicos consultivos, quitarles la mayor parte de las subvenciones a los partidos políticos y castigar con inhabilitación estricta a los corruptos.",
+                        consequence: "Consecuencia: Menos dinero público destinado a la política y castigos ejemplares y directos contra los políticos corruptos.",
+                        party: "vox",
+                        measureText: "Recorte a partidos y castigo severo a la corrupción.",
+                        econ: 1, social: -2
+                    },
+                    {
+                        text: "Que sean los propios jueces (y no los partidos políticos en el Parlamento) quienes elijan directamente a los miembros de la cúpula judicial, y endurecer las penas por robar dinero público.",
+                        consequence: "Consecuencia: Se quita a los partidos el control sobre los jueces para buscar su independencia y se castiga con más dureza el uso ilegal de fondos públicos.",
+                        party: "pp",
+                        measureText: "Elección judicial por jueces y endurecimiento de malversación.",
+                        econ: 1, social: -1
+                    },
+                    {
+                        text: "Cambiar la forma de elegir a los jueces abriendo los nombramientos a criterios más participativos para evitar que los grandes partidos se repartan los cargos de la justicia.",
+                        consequence: "Consecuencia: Se busca una justicia más independiente donde los dos partidos mayoritarios no se repartan los puestos clave de los tribunales.",
+                        party: "compromis",
+                        measureText: "Despolitización abierta de la justicia.",
+                        econ: -1, social: 1
+                    }
+                ]
+            },
+            {
+                category: "8. Infraestructuras y Transportes (Pregunta 14 de 1)",
+                title: "¿Qué modelo de transporte e infraestructuras priorizarías para conectar la Comunitat Valenciana?",
+                options: [
+                    {
+                        text: "Revisar con lupa las grandes obras públicas para hacer solo las que sean rentables y unificar la gestión de las carreteras bajo el Estado.",
+                        consequence: "Consecuencia: Se frenan los proyectos caros o poco rentables para ahorrar dinero público.",
+                        party: "vox",
+                        measureText: "Auditoría de obras y control de gasto.",
+                        econ: 1, social: -1
+                    },
+                    {
+                        text: "Invertir fuertemente en los trenes de pueblo y comarca, ofrecer transporte público gratis para los jóvenes y frenar la ampliación de grandes autovías.",
+                        consequence: "Consecuencia: Se prioriza viajar de forma ecológica frente a construir más carreteras para coches privados.",
+                        party: "compromis",
+                        measureText: "Movilidad sostenible y tren comarcal.",
+                        econ: -1, social: 1
+                    },
+                    {
+                        text: "Acelerar de forma definitiva las obras del Corredor Mediterráneo para mercancías y alta velocidad, y arreglar a fondo los trenes de Cercanías.",
+                        consequence: "Consecuencia: Un impulso económico clave para sectores estratégicos como la industria de Castellón y los puertos.",
+                        party: "pp",
+                        measureText: "Impulso total al Corredor Mediterráneo y Cercanías.",
+                        econ: 1, social: -1
+                    },
+                    {
+                        text: "Continuar el ritmo actual de obras en el Corredor Mediterráneo (la gran vía ferroviaria litoral para mercancías y pasajeros que conecta el este peninsular con Europa), mantener descuentos en los trenes de media distancia y mejorar el transporte público de las ciudades.",
+                        consequence: "Consecuencia: Se sigue invirtiendo en las grandes rutas previstas mientras se rebaja el precio del billete para los viajeros frecuentes.",
+                        party: "psoe",
+                        measureText: "Continuidad inversora y bonificaciones al viajero.",
+                        econ: -1, social: 0
                     }
                 ]
             }
         ];
 
         let currentQuestion = 0;
-        let userSelections = new Array(questions.length).fill(null);
+        let userAnswers = new Array(questions.length).fill(null);
 
-        // DOM Elements
         const welcomeScreen = document.getElementById('welcome-screen');
         const quizScreen = document.getElementById('quiz-screen');
         const resultsScreen = document.getElementById('results-screen');
+        
         const questionIndicator = document.getElementById('question-indicator');
         const progressPercent = document.getElementById('progress-percent');
         const progressBar = document.getElementById('progress-bar');
@@ -526,45 +648,44 @@
 
         function loadQuestion() {
             const q = questions[currentQuestion];
-            questionIndicator.innerText = `Pregunta ${currentQuestion + 1} de ${questions.length}`;
-            const pct = Math.round(((currentQuestion + 1) / questions.length) * 100);
-            progressPercent.innerText = `${pct}%`;
-            progressBar.style.width = `${pct}%`;
-
-            questionCategory.innerText = q.category;
-            questionTitle.innerText = q.title;
+            questionCategory.textContent = q.category;
+            questionTitle.textContent = q.title;
+            questionIndicator.textContent = `Pregunta ${currentQuestion + 1} de ${questions.length}`;
+            
+            const percent = Math.round(((currentQuestion + 1) / questions.length) * 100);
+            progressPercent.textContent = `${percent}%`;
+            progressBar.style.width = `${percent}%`;
 
             optionsContainer.innerHTML = '';
             q.options.forEach((opt, index) => {
-                const isSelected = userSelections[currentQuestion] === index;
-                const btn = document.createElement('button');
-                btn.className = `w-full text-left p-4 rounded-xl border transition-all duration-200 cursor-pointer ${
+                const isSelected = userAnswers[currentQuestion] === index;
+                const card = document.createElement('div');
+                card.className = `p-4 rounded-xl border-2 cursor-pointer transition duration-200 ${
                     isSelected 
-                        ? 'border-indigo-600 bg-indigo-50/60 ring-2 ring-indigo-600/20 text-indigo-950 font-medium' 
-                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700'
+                        ? 'border-indigo-600 bg-indigo-50/50 shadow-sm' 
+                        : 'border-slate-200 hover:border-slate-300 bg-white'
                 }`;
-                btn.innerHTML = `
+                card.onclick = () => selectOption(index);
+
+                card.innerHTML = `
                     <div class="flex items-start gap-3">
-                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full border ${isSelected ? 'bg-indigo-600 border-indigo-600 text-white' : 'border-slate-300 text-slate-500'} text-xs font-bold mt-0.5 shrink-0">
-                            ${String.fromCharCode(65 + index)}
-                        </span>
-                        <div class="space-y-1">
-                            <p class="text-sm md:text-base leading-relaxed font-semibold">${opt.text}</p>
-                            <p class="text-xs text-slate-500 italic bg-white/60 p-2 rounded border border-slate-100">${opt.consequence}</p>
+                        <input type="radio" name="question-opt" value="${index}" ${isSelected ? 'checked' : ''} class="mt-1 text-indigo-600 focus:ring-indigo-500">
+                        <div>
+                            <p class="font-semibold text-slate-900 text-sm md:text-base">${opt.text}</p>
+                            <p class="text-xs text-slate-500 mt-1 italic">${opt.consequence}</p>
                         </div>
                     </div>
                 `;
-                btn.onclick = () => selectOption(index);
-                optionsContainer.appendChild(btn);
+                optionsContainer.appendChild(card);
             });
 
             prevBtn.disabled = currentQuestion === 0;
-            nextBtn.disabled = userSelections[currentQuestion] === null;
-            nextBtn.innerText = currentQuestion === questions.length - 1 ? 'Ver Resultados y Desglose 📊' : 'Siguiente →';
+            nextBtn.disabled = userAnswers[currentQuestion] === null;
+            nextBtn.textContent = currentQuestion === questions.length - 1 ? 'Ver Resultados →' : 'Siguiente →';
         }
 
         function selectOption(index) {
-            userSelections[currentQuestion] = index;
+            userAnswers[currentQuestion] = index;
             loadQuestion();
         }
 
@@ -576,135 +697,164 @@
         }
 
         function nextQuestion() {
-            if (userSelections[currentQuestion] !== null) {
-                if (currentQuestion < questions.length - 1) {
-                    currentQuestion++;
-                    loadQuestion();
-                } else {
-                    calculateResults();
-                }
+            if (userAnswers[currentQuestion] === null) return;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
             }
         }
 
-        function calculateResults() {
+        function showResults() {
             quizScreen.classList.add('hidden');
             resultsScreen.classList.remove('hidden');
 
-            let scores = { pp: 0, psoe: 0, vox: 0, compromis: 0 };
-            let selectedMeasuresByParty = {
-                pp: [],
-                psoe: [],
-                vox: [],
-                compromis: []
+            const scores = { pp: 0, psoe: 0, vox: 0, compromis: 0 };
+            const selectedMeasures = { pp: [], psoe: [], vox: [], compromis: [] };
+            
+            let totalEcon = 0;
+            let totalSocial = 0;
+
+            userAnswers.forEach((ansIndex, qIndex) => {
+                if (ansIndex !== null) {
+                    const chosenOption = questions[qIndex].options[ansIndex];
+                    scores[chosenOption.party]++;
+                    selectedMeasures[chosenOption.party].push(chosenOption.measureText);
+                    totalEcon += chosenOption.econ;
+                    totalSocial += chosenOption.social;
+                }
+            });
+
+            const total = questions.length;
+            const percentages = {
+                pp: Math.round((scores.pp / total) * 100),
+                psoe: Math.round((scores.psoe / total) * 100),
+                vox: Math.round((scores.vox / total) * 100),
+                compromis: Math.round((scores.compromis / total) * 100)
             };
 
-            questions.forEach((q, qIdx) => {
-                const selectedOptIdx = userSelections[qIdx];
-                const chosenOption = q.options[selectedOptIdx];
-                
-                // Add score
-                scores[chosenOption.party] = (scores[chosenOption.party] || 0) + 3;
+            // Render affinity bars
+            const affinityContainer = document.getElementById('affinity-results');
+            affinityContainer.innerHTML = '';
 
-                // Push specific measure to the corresponding party list
-                selectedMeasuresByParty[chosenOption.party].push({
-                    category: q.category,
-                    measure: chosenOption.measureText
-                });
-            });
-
-            let partyInfo = [
-                { id: 'pp', name: 'Partido Popular (PP)', color: 'bg-blue-600', text: 'text-blue-700' },
-                { id: 'psoe', name: 'Partido Socialista (PSOE)', color: 'bg-rose-600', text: 'text-rose-700' },
-                { id: 'vox', name: 'Vox', color: 'bg-emerald-600', text: 'text-emerald-700' },
-                { id: 'compromis', name: 'Compromís / Izquierda', color: 'bg-orange-600', text: 'text-orange-700' }
+            const partiesInfo = [
+                { key: 'pp', name: 'Partido Popular (PP)', color: 'bg-blue-600' },
+                { key: 'psoe', name: 'Partido Socialista (PSOE)', color: 'bg-rose-600' },
+                { key: 'vox', name: 'Vox', color: 'bg-emerald-600' },
+                { key: 'compromis', name: 'Compromís - Esquerra / Confluencia', color: 'bg-orange-600' }
             ];
 
-            partyInfo.forEach(p => {
-                let raw = scores[p.id] || 0;
-                p.score = raw;
-                // Calculate percentage out of total questions (12 questions * 3 points max = 36)
-                p.pct = Math.round((raw / (questions.length * 3)) * 100);
-            });
+            partiesInfo.sort((a, b) => percentages[b.key] - percentages[a.key]);
 
-            // Sort descending by percentage
-            partyInfo.sort((a, b) => b.pct - a.pct);
-
-            // Render results bars
-            const resultsContainer = document.getElementById('affinity-results');
-            resultsContainer.innerHTML = '';
-
-            partyInfo.forEach((p, idx) => {
-                const div = document.createElement('div');
-                div.className = "space-y-1.5";
-                div.innerHTML = `
-                    <div class="flex justify-between items-center text-sm font-semibold">
-                        <span class="text-slate-800 flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full ${p.color}"></span>
-                            ${p.name} ${idx === 0 ? '👑 (Mayor Afinidad)' : ''}
-                        </span>
-                        <span class="${p.text}">${p.pct}%</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
-                        <div class="${p.color} h-3 rounded-full transition-all duration-1000" style="width: ${p.pct}%;"></div>
+            partiesInfo.forEach(p => {
+                const pct = percentages[p.key];
+                affinityContainer.innerHTML += `
+                    <div>
+                        <div class="flex justify-between font-semibold text-sm mb-1">
+                            <span>${p.name}</span>
+                            <span>${pct}% Afinidad</span>
+                        </div>
+                        <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
+                            <div class="${p.color} h-3 rounded-full transition-all duration-500" style="width: ${pct}%;"></div>
+                        </div>
                     </div>
                 `;
-                resultsContainer.appendChild(div);
             });
 
-            // Render Breakdown of Selected Measures by Party
+            // Render detailed measures breakdown
             const breakdownContainer = document.getElementById('selected-measures-breakdown');
             breakdownContainer.innerHTML = '';
 
-            partyInfo.forEach(p => {
-                const measures = selectedMeasuresByParty[p.id];
-                const card = document.createElement('div');
-                card.className = "bg-slate-50 border border-slate-200 rounded-xl p-4";
-                
-                let measuresListHTML = '';
+            partiesInfo.forEach(p => {
+                const measures = selectedMeasures[p.key];
+                let listHtml = '';
                 if (measures.length > 0) {
-                    measuresListHTML = `<ul class="list-disc list-inside space-y-1 mt-2 text-xs md:text-sm text-slate-700">`;
-                    measures.forEach(m => {
-                        measuresListHTML += `<li><strong class="text-slate-900">[${m.category.split('(')[0].trim()}]</strong> ${m.measure}</li>`;
-                    });
-                    measuresListHTML += `</ul>`;
+                    listHtml = `<ul class="list-disc list-inside text-xs md:text-sm text-slate-700 space-y-1 mt-2">` +
+                        measures.map(m => `<li>${m}</li>`).join('') +
+                        `</ul>`;
                 } else {
-                    measuresListHTML = `<p class="text-xs text-slate-500 italic mt-1">No has seleccionado ninguna medida prioritaria de esta formación en tus respuestas.</p>`;
+                    listHtml = `<p class="text-xs text-slate-400 italic mt-1">Ninguna medida seleccionada para esta formación.</p>`;
                 }
 
-                card.innerHTML = `
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-slate-900 text-sm md:text-base flex items-center gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full ${p.color}"></span>
-                            ${p.name} (${measures.length} medidas seleccionadas)
-                        </h4>
+                breakdownContainer.innerHTML += `
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50">
+                        <h5 class="font-bold text-slate-900 text-sm md:text-base flex items-center justify-between">
+                            <span>${p.name}</span>
+                            <span class="text-xs px-2 py-0.5 bg-white border rounded-md text-slate-600 font-semibold">${measures.length} medidas votadas</span>
+                        </h5>
+                        ${listHtml}
                     </div>
-                    ${measuresListHTML}
                 `;
-                breakdownContainer.appendChild(card);
             });
 
-            // Contextual analysis recommendation for Almassora / Castellon
-            const topParty = partyInfo[0].id;
-            const summaryBox = document.getElementById('contextual-summary');
-            
-            if (topParty === 'pp') {
-                summaryBox.innerHTML = `Tu perfil coincide mayoritariamente con el <strong>Partido Popular</strong>. En la circunscripción de Castellón (5 escaños en juego), el voto útil del centro-derecha se concentra en esta opción para liderar el bloque y maximizar la representación frente a la izquierda, apoyando bajadas de IRPF, planes hídricos y defensa de la industria cerámica de la Plana Baixa.`;
-            } else if (topParty === 'psoe') {
-                summaryBox.innerHTML = `Tu perfil coincide mayoritariamente con el <strong>Partido Socialista (PSOE)</strong>. En la provincia de Castellón, el PSOE actúa como el eje central del bloque progresista, siendo la opción de voto útil con mayor garantía matemática para asegurar escaños que eviten la pérdida de restos a favor de la derecha.`;
-            } else if (topParty === 'vox') {
-                summaryBox.innerHTML = `Tu perfil coincide mayoritariamente con <strong>Vox</strong>. En Castellón, Vox cuenta con un electorado consolidado que disputa de manera directa el último escaño decisivo. Tu voto en esta circunscripción tiene un peso real para impulsar medidas de seguridad estricta y reducción del Estado autonómico.`;
+            // Nolan Profile Calculation
+            const nolanContainer = document.getElementById('nolan-profile-content');
+            let econText = "";
+            let socialText = "";
+            let overallProfile = "";
+
+            if (totalEcon <= -6) {
+                econText = "Intervencionista / Proteccionista (fuerte regulación pública, banca/energética pública y redistribución fiscal intensiva).";
+            } else if (totalEcon < 0) {
+                econText = "Socialdemócrata / Moderadamente Intervencionista (apoyo al Estado del bienestar con incentivos fiscales condicionados).";
+            } else if (totalEcon <= 6) {
+                econText = "Liberal-Conservador / Moderado en Mercado (apoyo a incentivos fiscales a PYMEs, deflactación y flexibilidad laboral).";
             } else {
-                summaryBox.innerHTML = `Tu perfil coincide mayoritariamente con el espacio de <strong>Compromís e Izquierda</strong>. Apuestas por medidas de vivienda social, transición ecológica y blindaje de servicios públicos. Conviene sopesar la concentración de voto para asegurar que los restos alcancen la barrera electoral provincial de Castellón.`;
+                econText = "Neoliberal / Libre Mercado radical (supresión masiva de impuestos, rebaja del Impuesto de Sociedades y desregulación económica total).";
+            }
+
+            if (totalSocial >= 6) {
+                socialText = "Progresista / Libertario de Izquierdas (ampliación de derechos civiles, protección social incondicional y modelo descentralizado).";
+            } else if (totalSocial > 0) {
+                socialText = "Reformista / Progresista Moderado (apoyo a servicios públicos universales y derechos sociales garantizados).";
+            } else if (totalSocial >= -6) {
+                socialText = "Conservador / Tradicional (orden público estricto, endurecimiento de penas y protección de la familia tradicional).";
+            } else {
+                socialText = "Nacional-Conservador / Autoritario (mano dura migratoria, recentralización y supresión de autonomías).";
+            }
+
+            // Determine overall label
+            if (totalEcon < 0 && totalSocial > 0) {
+                overallProfile = "Centro Progresista / Socialdemócrata";
+            } else if (totalEcon <= -6 && totalSocial >= 6) {
+                overallProfile = "Izquierda Transformadora / Ecosocialista";
+            } else if (totalEcon > 0 && totalSocial < 0) {
+                overallProfile = "Liberal-Conservador / Derecha Reformista";
+            } else if (totalEcon >= 6 && totalSocial <= -6) {
+                overallProfile = "Derecha Radical / Libertaria de Derechas";
+            } else {
+                overallProfile = "Centro Moderado / Eklektiko";
+            }
+
+            nolanContainer.innerHTML = `
+                <p><strong>Dimensión Económica:</strong> Eres predominantemente ${econText}</p>
+                <p><strong>Dimensión Social e Institucional:</strong> Te sitúas en el espectro ${socialText}</p>
+                <p class="mt-2 pt-2 border-t border-indigo-200 text-indigo-900 font-semibold">
+                    Etiqueta Ideológica Estimada del Test: <span class="underline">${overallProfile}</span>
+                </p>
+                <p class="text-xs text-slate-500 mt-1 italic">
+                    Basado en la Escala de Nolan, este cruce sitúa tus respuestas fuera de la simple etiqueta de partidos, reflejando tu grado de apoyo real a la intervención estatal frente a la autonomía individual en lo económico y lo social.
+                </p>
+            `;
+
+            // Contextual analysis recommendation based on highest score
+            const topParty = partiesInfo[0].key;
+            const contextSummary = document.getElementById('contextual-summary');
+            
+            if (topParty === 'pp' || topParty === 'vox') {
+                contextSummary.innerHTML = `Tu afinidad principal se alinea con el bloque de <strong>centroderecha / derecha</strong>. En la circunscripción de <strong>Castellón</strong>, si buscas maximizar la representación directa frente a la izquierda, el <strong>Partido Popular (PP)</strong> concentra el voto útil principal. No obstante, <strong>Vox</strong> cuenta con un sólido arraigo en comarcas de Castellón y disputa de forma real el último escaño en juego, por lo que tu voto en ambos casos tiene un impacto directo en la distribución provincial (29N).`;
+            } else {
+                contextSummary.innerHTML = `Tu afinidad principal se alinea con el bloque <strong>progresista / de izquierdas</strong>. En la provincia de <strong>Castellón</strong> (circunscripción pequeña de 5 escaños), el <strong>Partido Socialista (PSOE)</strong> representa la opción matemática más segura de voto útil para evitar que los restos pasen a la derecha. Si prefieres impulsar el valencianismo y la izquierda verde, <strong>Compromís</strong> es la alternativa con estructura consolidada, aunque en circunscripciones pequeñas exige concentración de voto para superar el umbral competitivo de escaños (29N).`;
             }
         }
 
         function resetQuiz() {
             currentQuestion = 0;
-            userSelections = new Array(questions.length).fill(null);
+            userAnswers = new Array(questions.length).fill(null);
             resultsScreen.classList.add('hidden');
             welcomeScreen.classList.remove('hidden');
         }
     </script>
-
 </body>
 </html>
